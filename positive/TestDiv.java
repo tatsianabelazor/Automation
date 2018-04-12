@@ -2,7 +2,6 @@ package automation.positive;
 
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -19,6 +18,7 @@ public class TestDiv {
         calc = new Calculator();
         System.out.println("@BeforeMethod");
     }
+
     @Test()
     public void testDiv() {
         Assert.assertEquals(calc.div(10, 2), 5, "Division action is incorrect");
@@ -31,7 +31,7 @@ public class TestDiv {
 
     @AfterMethod
     public void tearDown() {
-        System.out.println("Blabla");
+        System.out.println("TestDiv is finished");
     }
 }
 
