@@ -38,7 +38,7 @@ public class TestMult {
 
     @AfterMethod
     public void tearDown() {
-        System.out.println("TestMult is finished bla bla");
+        System.out.println("TestMult is finished");
     }
 }
 
