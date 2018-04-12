@@ -29,7 +29,7 @@ public class TestSub {
 
     @AfterMethod
     public void tearDown() {
-        System.out.println("TestSub is finished bla bla");
+        System.out.println("TestSub is finished");
     }
 
 }

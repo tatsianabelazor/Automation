@@ -27,6 +27,10 @@ public class TestCos {
                 {1.5707963267948966192313216916398, 0}};
     }
 
+    /**
+     * There is a defect in the following method: public double cos(double a) {return Math.sin(a);}
+     *   Test failed
+     */
     @Test(dataProvider = "cosData")
     public void testCos(double a, double expectedResult) {
         double result = calc.cos(a);
