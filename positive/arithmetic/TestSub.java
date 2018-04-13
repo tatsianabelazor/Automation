@@ -1,4 +1,4 @@
-package automation.positive;
+package automation.positive.arithmetic;
 
 import automation.TestConfiguration;
 import com.epam.tat.module4.Calculator;
@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 public class TestSub extends TestConfiguration {
     Calculator calc = new Calculator();
 
-    @Test
+    @Test(groups = "Arithmentic")
     public void testSub() {
         Assert.assertEquals(calc.sub(10, 5), 5, "Substarction action is incorrect");
     }

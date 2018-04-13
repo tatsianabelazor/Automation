@@ -1,4 +1,4 @@
-package automation.positive;
+package automation.positive.trigonometric;
 
 import automation.TestConfiguration;
 import com.epam.tat.module4.Calculator;
