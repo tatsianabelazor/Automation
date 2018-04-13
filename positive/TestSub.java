@@ -1,9 +1,8 @@
 package automation.positive;
 
+import automation.TestConfiguration;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
@@ -12,26 +11,13 @@ import org.testng.annotations.Test;
  */
 
 
-
-public class TestSub {
-    private Calculator calc;
-
-    @BeforeMethod
-    public void setUp() throws Exception {
-        calc = new Calculator();
-        System.out.println("@BeforeMethod");
-    }
+public class TestSub extends TestConfiguration {
+    Calculator calc = new Calculator();
 
     @Test
     public void testSub() {
         Assert.assertEquals(calc.sub(10, 5), 5, "Substarction action is incorrect");
     }
-
-    @AfterMethod
-    public void tearDown() {
-        System.out.println("TestSub is finished");
-    }
-
 }
 
 

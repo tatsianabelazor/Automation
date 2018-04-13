@@ -1,23 +1,16 @@
 package automation.positive;
 
+import automation.TestConfiguration;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
  * Created by Tatsiana_Belazor on 02-Mar-18.
  */
-public class TestSqrt {
-    private Calculator calc;
-
-    @BeforeMethod
-    public void setUp() throws Exception {
-        calc = new Calculator();
-        System.out.println("@BeforeMethod");
-    }
+public class TestSqrt extends TestConfiguration {
+    Calculator calc = new Calculator();
 
     @DataProvider
     public Object[][] sqrtData() {
@@ -34,10 +27,4 @@ public class TestSqrt {
         double result = calc.sqrt(a);
         Assert.assertEquals(result, expectedResult, "Sqrt is incorrect, expected:" + expectedResult);
     }
-
-    @AfterMethod
-    public void tearDown() {
-        System.out.println("TestSqrt is finished");
-    }
-
 }

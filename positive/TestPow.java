@@ -1,23 +1,16 @@
 package automation.positive;
 
+import automation.TestConfiguration;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
  * Created by Tatsiana_Belazor on 02-Mar-18.
  */
-public class TestPow {
-    private Calculator calc;
-
-    @BeforeMethod
-    public void setUp() throws Exception {
-        calc = new Calculator();
-        System.out.println("@BeforeMethod");
-    }
+public class TestPow extends TestConfiguration {
+    Calculator calc = new Calculator();
 
     @DataProvider
     public Object[][] powData() {
@@ -35,8 +28,4 @@ public class TestPow {
         Assert.assertEquals(result, expectedResult, "Pow is incorrect, expected:" + expectedResult);
     }
 
-    @AfterMethod
-    public void tearDown() {
-        System.out.println("TestPow is finished");
-    }
 }

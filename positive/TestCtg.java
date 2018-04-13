@@ -1,5 +1,6 @@
 package automation.positive;
 
+import automation.TestConfiguration;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -10,21 +11,13 @@ import org.testng.annotations.Test;
 /**
  * Created by Tatsiana_Belazor on 02-Mar-18.
  */
-public class TestCtg {
-    private Calculator calc;
-
-    @BeforeMethod
-    public void setUp() throws Exception {
-        calc = new Calculator();
-        System.out.println("@BeforeMethod");
-    }
+public class TestCtg extends TestConfiguration {
+   Calculator calc = new Calculator();
 
     @DataProvider
     public Object[][] ctgData() {
         return new Object[][]{
-                {40, 1},
                 {45, 1},
-                {50, 1},
                 {60, 1}};
     }
     @Test(dataProvider = "ctgData")
@@ -32,9 +25,4 @@ public class TestCtg {
         double result = calc.ctg(a);
         Assert.assertEquals(result, expectedResult);
     }
-    @AfterMethod
-    public void tearDown() {
-        System.out.println("TestCtg is finished");
-    }
-
 }

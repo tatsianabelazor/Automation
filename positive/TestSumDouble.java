@@ -2,8 +2,6 @@ package automation.positive;
 
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -11,14 +9,7 @@ import org.testng.annotations.Test;
  * Created by Tatsiana_Belazor on 02-Mar-18.
  */
 public class TestSumDouble {
-
-    private Calculator calc;
-
-    @BeforeMethod
-    public void setUp() throws Exception {
-        calc = new Calculator();
-        System.out.println("@BeforeMethod");
-    }
+    Calculator calc = new Calculator();
 
     @DataProvider
     public Object[][] sumData() {
@@ -35,10 +26,4 @@ public class TestSumDouble {
         double result = calc.sum(a, b);
         Assert.assertEquals(result, expectedResult, "Invalid result of summary, expected:" + expectedResult);
     }
-
-    @AfterMethod
-    public void tearDown() {
-        System.out.println("TestSumDouble is finished");
-    }
-
 }

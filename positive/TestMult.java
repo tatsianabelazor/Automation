@@ -1,5 +1,6 @@
 package automation.positive;
 
+import automation.TestConfiguration;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -10,15 +11,9 @@ import org.testng.annotations.Test;
 /**
  * Created by Tatsiana_Belazor on 02-Mar-18.
  */
-public class TestMult {
+public class TestMult extends TestConfiguration {
 
-    private Calculator calc;
-
-    @BeforeMethod
-    public void setUp() throws Exception {
-        calc = new Calculator();
-        System.out.println("@BeforeMethod");
-    }
+    Calculator calc = new Calculator();
 
     @DataProvider
     public Object[][] multData() {
@@ -34,11 +29,6 @@ public class TestMult {
     public void testMult(double a, double b, double expectedResult) {
         double result = calc.mult(a, b);
         Assert.assertEquals(result, expectedResult, "Multiplication action is incorrect:" + expectedResult);
-    }
-
-    @AfterMethod
-    public void tearDown() {
-        System.out.println("TestMult is finished");
     }
 }
 

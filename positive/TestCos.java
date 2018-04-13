@@ -1,23 +1,16 @@
 package automation.positive;
 
+import automation.TestConfiguration;
 import com.epam.tat.module4.Calculator;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 /**
  * Created by Tatsiana_Belazor on 02-Mar-18.
  */
-public class TestCos {
-    private Calculator calc;
-
-    @BeforeMethod
-    public void setUp() throws Exception {
-        calc = new Calculator();
-        System.out.println("@BeforeMethod");
-    }
+public class TestCos extends TestConfiguration {
+    Calculator calc = new Calculator();
 
     @DataProvider
     public Object[][] cosData() {
@@ -29,17 +22,11 @@ public class TestCos {
 
     /**
      * There is a defect in the following method: public double cos(double a) {return Math.sin(a);}
-     *   Test failed
+     * Test failed
      */
     @Test(dataProvider = "cosData")
     public void testCos(double a, double expectedResult) {
         double result = calc.cos(a);
         Assert.assertEquals(result, expectedResult, "Cosinus is incorrect, expected:" + expectedResult);
     }
-
-    @AfterMethod
-    public void tearDown() {
-        System.out.println("TestCos is finished");
-    }
-
 }
