@@ -20,7 +20,7 @@ public class TestTg extends TestConfiguration {
                 {6.283185307179586476925286766559, 0}};
     }
 
-    @Test(dataProvider = "tgData")
+    @Test(dataProvider = "tgData", groups = "Trigonometric")
     public void testTg(double a, double expectedResult) {
         double result = calc.tg(a);
         Assert.assertEquals(result, expectedResult, "Tangens is incorrect, expected:" + expectedResult);

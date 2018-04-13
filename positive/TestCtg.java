@@ -20,7 +20,7 @@ public class TestCtg extends TestConfiguration {
                 {45, 1},
                 {60, 1}};
     }
-    @Test(dataProvider = "ctgData")
+    @Test(dataProvider = "ctgData", groups = "Trigonometric")
     public void testCtg(double a, double expectedResult) {
         double result = calc.ctg(a);
         Assert.assertEquals(result, expectedResult);
