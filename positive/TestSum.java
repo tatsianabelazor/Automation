@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 /**
  * Created by Tatsiana_Belazor on 02-Mar-18.
  */
-public class TestSumDouble {
+public class TestSum {
     Calculator calc = new Calculator();
 
     @DataProvider
